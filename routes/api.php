@@ -17,16 +17,16 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/word/{word}', 'WordController@getWordApi')->name('getWordApi')->middleware('cors');
+Route::get('/word/{word}', 'WordController@getWordApi')->name('getWordApi');
 
-Route::get('/{language}/words', 'WordController@getWordsLanguage')->name('getWordsLanguage')->middleware('cors');
+Route::get('/{language}/words', 'WordController@getWordsLanguage')->name('getWordsLanguage');
 
-Route::get('/language/{language}', 'LanguageController@getLanguage')->middleware('cors')->name('getLanguage');
+Route::get('/language/{language}', 'LanguageController@getLanguage')->name('getLanguage');
 
-Route::get('/languages', 'LanguageController@getLanguages')->middleware('cors')->name('getLanguages');
+Route::get('/languages', 'LanguageController@getLanguages')->name('getLanguages');
 
-Route::get('/words', 'WordController@getWordsApi')->name('getWordsApi')->middleware('cors');
+Route::get('/words', 'WordController@getWordsApi')->name('getWordsApi');
 
-Route::post('/downloader', 'DownloaderController@createDownloader')->name('createDownloader')->middleware('cors');
+Route::post('/downloader', 'DownloaderController@createDownloader')->name('createDownloader');
 
-Route::get('/downloader/{email}', 'DownloaderController@getDownloader')->name('getDownloader')->middleware('cors');
+Route::get('/downloader/{email}', 'DownloaderController@getDownloader')->name('getDownloader');

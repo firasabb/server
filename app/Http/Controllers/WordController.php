@@ -290,7 +290,7 @@ class WordController extends Controller
 
         $_language = Language::where('language', $language)->firstOrFail();
 
-        $words = Word::where('language_id', $_language->id)->orderBy('id', 'desc')->get();
+        $words = Word::where('language_id', $_language->id)->inRandomOrder()->get();
 
 
         return new WordResourceCollection($words);
