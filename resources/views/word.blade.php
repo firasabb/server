@@ -97,7 +97,7 @@
                     {{ Form::text('photo_link', $word->photo, ['class' => 'form-control']) }}
 
                     {{ Form::label('description', 'Description') }}
-                    {{ Form::text('description', $word->description, ['class' => 'form-control']) }}
+                    {{ Form::textarea('description', $word->description, ['class' => 'form-control', 'rows' => 4]) }}
 
                     {{ Form::label('rating_us', 'Rating Us') }}
                     {{ Form::text('rating_us', $word->rating_us, ['class' => 'form-control']) }}
@@ -109,13 +109,13 @@
                     {{ Form::text('link', $word->link, ['class' => 'form-control']) }}
 
                     {{ Form::label('payment', 'Payment') }}
-                    {{ Form::text('payment', $word->payment, ['class' => 'form-control']) }}
+                    {{ Form::textarea('payment', $word->payment, ['class' => 'form-control', 'rows' => 4]) }}
 
                     {{ Form::label('color', 'Color') }}
                     {{ Form::text('color', $word->color, ['class' => 'form-control']) }}
 
                     {{ Form::label('eligibility', 'Eligibility') }}
-                    {{ Form::text('eligibility', $word->eligibility, ['class' => 'form-control']) }}
+                    {{ Form::textarea('eligibility', $word->eligibility, ['class' => 'form-control', 'rows' => 4]) }}
 
 
                     {{ Form::label('sponsored', 'Sponsored') }}

@@ -83,7 +83,7 @@
                     {{ Form::text('photo_link', '', ['class' => 'form-control']) }}
 
                     {{ Form::label('description', 'Description') }}
-                    {{ Form::text('description', '', ['class' => 'form-control']) }}
+                    {{ Form::textarea('description', '', ['class' => 'form-control', 'rows' => 4]) }}
 
                     {{ Form::label('rating-us', 'Rating us') }}
                     {{ Form::text('rating_us', '', ['class' => 'form-control']) }}
@@ -95,13 +95,13 @@
                     {{ Form::text('link', '', ['class' => 'form-control']) }}
 
                     {{ Form::label('payment', 'Payment') }}
-                    {{ Form::text('payment', '', ['class' => 'form-control']) }}
+                    {{ Form::textarea('payment', '', ['class' => 'form-control', 'rows' => 4]) }}
 
                     {{ Form::label('color', 'Color') }}
                     {{ Form::text('color', '', ['class' => 'form-control']) }}
 
                     {{ Form::label('eligibility', 'Eligibility') }}
-                    {{ Form::text('eligibility', '', ['class' => 'form-control']) }}
+                    {{ Form::textarea('eligibility', '', ['class' => 'form-control', 'rows' => 4]) }}
 
                     {{ Form::label('sponsored', 'Sponsored') }}
                     {{ Form::checkbox('sponsored', '1') }}
