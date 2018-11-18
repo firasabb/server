@@ -17,13 +17,13 @@ class CreateWordsTable extends Migration
             $table->increments('id');
             $table->string('title')->unique();
             $table->string('tagline');
-            $table->string('description');
+            $table->longText('description');
             $table->integer('rating_us');
             $table->string('rating_visitors');
-            $table->string('eligibility');
+            $table->longText('eligibility');
             $table->string('androidlink');
             $table->string('ioslink');
-            $table->string('payment');
+            $table->longText('payment');
             $table->string('color');
             $table->boolean('sponsored');
             $table->integer('language_id');
