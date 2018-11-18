@@ -83,7 +83,7 @@ class WordController extends Controller
         if($photo){
             $photoName = $request->file('photo')->getClientOriginalName();
 
-            $checker = Storage::disk('images')->has($photoName);
+            $checker = Storage::has($photoName);
 
             if($checker){
 
@@ -91,15 +91,15 @@ class WordController extends Controller
 
                 $photoName = $rand . $photoName;
 
-                $path = $photo->storeAs('/',$photoName, 'images');
+                $path = $photo->storeAs('/',$photoName);
 
             } else {
 
-                $path = $photo->storeAs('/', $photoName, 'images');
+                $path = $photo->storeAs('/', $photoName);
 
             }
 
-            $word->photo = Storage::disk('images')->url($photoName); 
+            $word->photo = Storage::url($photoName); 
 
         } else if($photo_link){
 
@@ -204,7 +204,7 @@ class WordController extends Controller
         if($photo){
             $photoName = $request->file('photo')->getClientOriginalName();
 
-            $checker = Storage::disk('images')->has($photoName);
+            $checker = Storage::has($photoName);
 
             if($checker){
 
@@ -212,11 +212,11 @@ class WordController extends Controller
 
                 $photoName = $rand . $photoName;
 
-                $path = $photo->storeAs('/',$photoName, 'images');
+                $path = $photo->storeAs('/',$photoName);
 
             } else {
 
-                $path = $photo->storeAs('/', $photoName, 'images');
+                $path = $photo->storeAs('/', $photoName);
 
             }
 

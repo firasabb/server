@@ -32,7 +32,7 @@ class AdminController extends Controller
     public function photosPage(){
         
 
-        $photos = Storage::disk('images')->allFiles();
+        $photos = Storage::allFiles();
         return view('photos', ['photos' => $photos]);
 
     }
@@ -48,7 +48,7 @@ class AdminController extends Controller
 
         $photoName = $request->file('photo')->getClientOriginalName();
 
-        $checker = Storage::disk('images')->has($photoName);
+        $checker = Storage::has($photoName);
 
         if($checker){
 
@@ -56,11 +56,11 @@ class AdminController extends Controller
 
             $photoName = $rand . $photoName;
 
-            $path = $photo->storeAs('/',$photoName, 'images');
+            $path = $photo->storeAs('/',$photoName);
 
         } else {
 
-        $path = $photo->storeAs('/', $photoName, 'images');
+        $path = $photo->storeAs('/', $photoName);
 
         }
 
@@ -69,7 +69,7 @@ class AdminController extends Controller
 
 
     public function deletePhoto($photo){
-        $photoToDelete = Storage::disk('images')->delete($photo);
+        $photoToDelete = Storage::delete($photo);
         $words = Word::where('photo', $photo)->get();
         if($words){
             foreach($words as $word){

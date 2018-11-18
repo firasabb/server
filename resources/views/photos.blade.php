@@ -19,19 +19,22 @@
                             </th>   
                         </tr>
                         @foreach ($photos as $photo)
-                            <tr>
-                                <td>
-                                    {{$photo}}
-                                </td>
-                                <td>
-                                    <img src='{{ Storage::disk('images')->url($photo) }}' class="img-fluid">
-                                </td>
-                                <td>
-                                    {!! Form::open(['url' => url('/panel/photos/' . $photo), 'class' => 'form-group', 'method' => 'DELETE']) !!}
-                                        {{ Form::submit('Delete', ['class'=>'btn btn-danger']) }}
-                                    {!! Form::close() !!}
-                                </td>
-                            </tr>
+                        @if ($photo == ".gitignore")
+                            @else
+                                <tr>
+                                    <td>
+                                        {{$photo}}
+                                    </td>
+                                    <td>
+                                        <img src='{{ Storage::url($photo) }}' class="img-fluid">
+                                    </td>
+                                    <td>
+                                        {!! Form::open(['url' => url('/panel/photos/' . $photo), 'class' => 'form-group', 'method' => 'DELETE']) !!}
+                                            {{ Form::submit('Delete', ['class'=>'btn btn-danger']) }}
+                                        {!! Form::close() !!}
+                                    </td>
+                                </tr>
+                            @endif
                         @endforeach
                     </table>
 
