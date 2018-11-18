@@ -91,8 +91,11 @@
                     {{ Form::label('rating-visitors', 'Rating Visitors') }}
                     {{ Form::text('rating_visitors', '', ['class' => 'form-control']) }}
 
-                    {{ Form::label('Link', 'link') }}
-                    {{ Form::text('link', '', ['class' => 'form-control']) }}
+                    {{ Form::label('androidLink', 'ANDROID link') }}
+                    {{ Form::text('androidlink', '', ['class' => 'form-control']) }}
+
+                    {{ Form::label('ioslink', 'IOS link') }}
+                    {{ Form::text('ioslink', '', ['class' => 'form-control']) }}
 
                     {{ Form::label('payment', 'Payment') }}
                     {{ Form::textarea('payment', '', ['class' => 'form-control', 'rows' => 4]) }}

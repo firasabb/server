@@ -21,7 +21,8 @@ class CreateWordsTable extends Migration
             $table->integer('rating_us');
             $table->string('rating_visitors');
             $table->string('eligibility');
-            $table->string('link');
+            $table->string('androidlink');
+            $table->string('ioslink');
             $table->string('payment');
             $table->string('color');
             $table->boolean('sponsored');

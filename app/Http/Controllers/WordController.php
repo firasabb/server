@@ -62,10 +62,11 @@ class WordController extends Controller
             'title' => 'required|unique:words|max:121',
             'description' => 'required',
             'tagline' => 'required',
-            'link' => 'required',
+            'androidlink' => 'required',
+            'ioslink' => 'required',
             'eligibility' => 'required',
-            'rating_us' => 'required|integer',
-            'rating_visitors' => 'required',
+            'rating_us' => 'required|integer|max:5',
+            'rating_visitors' => 'required|integer|max:5',
             'language' => 'required|exists:languages',
             'category' => 'required|exists:categories',
             'photo' => 'image|max:1000',
@@ -126,7 +127,8 @@ class WordController extends Controller
         $word->rating_visitors = $request->rating_visitors;
         $word->rating_us = $request->rating_us;
         $word->eligibility = $request->eligibility;
-        $word->link = $request->link;
+        $word->androidlink = $request->androidlink;
+        $word->ioslink = $request->ioslink;
         $word->payment = $request->payment;
         $word->color = $request->color;
         $word->language()->associate($language);
@@ -245,7 +247,8 @@ class WordController extends Controller
         $word->rating_visitors = $request->rating_visitors;
         $word->rating_us = $request->rating_us;
         $word->eligibility = $request->eligibility;
-        $word->link = $request->link;
+        $word->androidlink = $request->androidlink;
+        $word->ioslink = $request->ioslink;
         $word->payment = $request->payment;
         $word->color = $request->color;
         $word->language()->associate($language);

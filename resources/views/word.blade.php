@@ -66,10 +66,11 @@
             <div class="row justify-content-center">
                     <div class="col">
                         <div class="card">
-                            <h2>{{$word->link}}</h2>
-                            <p>{{$word->description}}</p>
-                            <p>{{$word->eligibility}}</p>
-                            <p>{{$word->photo}}</p>
+                            <p>Android Link:<strong>{{$word->androidlink}}</strong></p>
+                            <p>iOS Link:<strong>{{$word->ioslink}}</strong></p>
+                            <p>Description: {{$word->description}}</p>
+                            <p>Eligibility: {{$word->eligibility}}</p>
+                            <p>Photo: {{$word->photo}}</p>
                             <p>Category: {{$word->category->category}}</p>
                             <p>Our Rating: {{$word->rating_us}}</p>
                             <p>Sponsored: {{$word->sponsored}}</p>
@@ -105,8 +106,11 @@
                     {{ Form::label('rating-visitors', 'Rating Visitors') }}
                     {{ Form::text('rating_visitors', $word->rating_visitors, ['class' => 'form-control']) }}
 
-                    {{ Form::label('link', 'Link') }}
-                    {{ Form::text('link', $word->link, ['class' => 'form-control']) }}
+                    {{ Form::label('androidlink', 'Android Link') }}
+                    {{ Form::text('androidlink', $word->androidlink, ['class' => 'form-control']) }}
+
+                    {{ Form::label('ioslink', 'IOS Link') }}
+                    {{ Form::text('ioslink', $word->ioslink, ['class' => 'form-control']) }}
 
                     {{ Form::label('payment', 'Payment') }}
                     {{ Form::textarea('payment', $word->payment, ['class' => 'form-control', 'rows' => 4]) }}
