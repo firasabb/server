@@ -17,7 +17,7 @@ class Word extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'tagling' => $this->tagline,
+            'tagline' => $this->tagline,
             'description' => nl2br($this->description),
             'rating_us' => $this->rating_us,
             'rating_visitors' => $this->rating_visitors,
