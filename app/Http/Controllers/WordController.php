@@ -19,7 +19,7 @@ class WordController extends Controller
      */
     public function index()
     {
-        $words = Word::simplePaginate(20);
+        $words = Word::simplePaginate(15);
 
 
         $languages = Language::all();
@@ -293,7 +293,7 @@ class WordController extends Controller
 
         $_language = Language::where('language', $language)->firstOrFail();
 
-        $words = Word::where('language_id', $_language->id)->inRandomOrder()->get();
+        $words = Word::where('language_id', $_language->id)->inRandomOrder()->paginate(5);
 
 
         return new WordResourceCollection($words);
