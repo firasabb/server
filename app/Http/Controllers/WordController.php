@@ -61,7 +61,7 @@ class WordController extends Controller
     {
 
         $validator = $request->validate([
-            'title' => 'required|unique:words|max:121',
+            'title' => 'required|max:121',
             'description' => 'required',
             'tagline' => 'required',
             'androidlink' => 'required',
