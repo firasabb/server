@@ -105,7 +105,9 @@ class WordController extends Controller
 
         } else if($photo_link){
 
-                $word->photo = Storage::url($photo_link);
+                $word->photo = $photo_link;
+
+
         }
 
         if(!$request->sponsored){
@@ -220,7 +222,7 @@ class WordController extends Controller
 
             }
 
-            $word->photo = $photoName;           
+            $word->photo = Storage::url($photoName);           
         } else if($photo_link){
 
 
