@@ -104,7 +104,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $validator = $request->validate([
-            'language' => 'required|exists:languages'
+            'language' => 'exists:languages'
         ]);
 
         $category = Category::where('id', $id)->firstOrFail();

@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder
     {
         $name = 'Firas Abbas';
         $email = 'firas.abb.101@gmail.com';
-        $password = bcrypt('tetlytetly');
+        $password = bcrypt('alphaomega');
 
         $newUser = User::where('email', $email)->first();
 
