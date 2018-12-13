@@ -117,10 +117,7 @@ class LanguageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validator = $request->validate([
-            'language' => 'unique:languages|max:121|min:1',
-            'photo' => 'image|max:1000'
-        ]);
+
 
         $language = Language::where('id', $id)->firstOrFail();
 
